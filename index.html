@@ -39,13 +39,12 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Train Schedule</h1>
+        <h1 class="header center teal-text text-lighten-2">International Space Station Viewer</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">Search a location to find out when you can next see the International Space Station</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get
-            Started</a>
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Submit</a>
         </div>
         <br><br>
 
@@ -60,36 +59,23 @@
 
       <!--   Icon Section   -->
       <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate
-              our custom components. Additionally, we refined animations and transitions to provide a smoother
-              experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a
-              framework that incorporates components and animations that provide more feedback to users. Additionally,
-              a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new
-              users get started. We are also always open to feedback and can answer any questions a user may have about
-              Materialize.</p>
+        <div class="col s12 m12">
+          <div>
+            <table class="table table-sm table-hover" id="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <h5 class="center" id="city">City</h5>
+                  </th>
+                  <th scope="col">
+                    <h5 class="center" id="sighting">Future Sightings</h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- This is where the information goes from the form -->
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -182,10 +168,14 @@
 
   <!--  Scripts-->
   <!-- Compiled and minified JavaScript -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/javascript/materialize.js"></script>
+  <script src="assets/javascript/materialize.min.js"></script>
   <script src="assets/javascript/init.js"></script>
+  <script src="assets/javascript/apps.js"></script>
+
 
 </body>
 
