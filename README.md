@@ -32,7 +32,7 @@ Sketch of Final Project:
 
 APIs to be Used:
   -Open Notify: shows real time data of the ISS
-  -Google API: location data
+  -Bing Maps API: location data
 
   Future Dev APIs:
   -Geocoding: takes coordinates and shows a location in the world
