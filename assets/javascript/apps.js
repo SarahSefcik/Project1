@@ -19,8 +19,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         var apiKeyMapquest = VhIG9vrD4t2JMvh5f9k61v8rcGERpvxV;
-
-        var cityState = 'whatever the value is for the input field'
+        cityState = $("#input").val().trim();
 
         var queryUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + apiKeyMapquest + '&location=' + cityState;
 
