@@ -21,15 +21,15 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">allAboard</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="#">Search Station</a></li>
+        <li><a href="#">About Project</a></li>
+        <li><a href="#">About ISS</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="#">Search Station</a></li>
+        <li><a href="#">About Project</a></li>
+        <li><a href="#">About ISS</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -38,25 +38,35 @@
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">International Space Station Viewer</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">Search a location to find out when you can next see the International Space Station</h5>
-        </div>
-        <div class="row center">
-          <div class="row">
-            <div class="input-field col s12">
-              <input type="text" id="autocomplete-input user_submit" class="autocomplete">
-              <label for="autocomplete-input">Location</label>
-            </div>
-          </div>
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Submit</a>
-        </div>
-        <br><br>
 
+        <h1 class="header center teal-text text-lighten-2">International Space Station Viewer</h1>
+        <!-- CARD START -->
+        <div class="card-panel blue-grey darken-1">
+          <div class="row center">
+
+            <h5 class="header col s12 light">Search a location to find out when you can next see the International
+              Space Station</h5>
+          </div>
+          <div class="row center">
+
+            <!-- FORM LOCATION START -->
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" id="autocomplete-input user_submit" class="autocomplete">
+                <label for="autocomplete-input ">Location</label>
+              </div>
+            </div>
+            <!-- FORM LOCATION END -->
+
+            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Submit</a>
+          </div>
+
+
+        </div>
+        <!-- CARD END -->
       </div>
     </div>
-    <div class="parallax"><img src="assets/images/iss_photo-01.jpg" width="90%" height="auto" alt="ISS image, The station is over earth"/></div>
+    <div class="parallax"><img src="assets/images/iss_photo-01.jpg" width="90%" height="auto" alt="ISS image, The station is over earth" /></div>
   </div>
 
 
@@ -71,10 +81,20 @@
               <thead>
                 <tr>
                   <th scope="col">
-                    <h5 class="center" id="city">City</h5>
+                    <h5 class="center">City</h5>
+
+                    <!-- CITY PULL FROM OPEN NOTIFY ISS PASS API -->
+                    <div id="city">
+
+                    </div>
+
                   </th>
                   <th scope="col">
-                    <h5 class="center" id="sighting">Future Sightings</h5>
+                    <h5 class="center">Future Sightings</h5>
+                    <!-- SIGHTING PULL FROM OPEN NOTIFY ISS PASS API -->
+                    <div id="sighting">
+
+                    </div>
                   </th>
                 </tr>
               </thead>
@@ -98,7 +118,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="assets/images/iss_photo-02.jpg" alt="Unsplashed background img 2"/></div>
+    <div class="parallax"><img src="assets/images/iss_photo-02.jpg" alt="Unsplashed background img 2" /></div>
   </div>
 
   <div class="container">
@@ -130,7 +150,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="assets/images/iss_photo-03.jpg" alt="Unsplashed background img 3"/></div>
+    <div class="parallax"><img src="assets/images/iss_photo-03.jpg" alt="Unsplashed background img 3" /></div>
   </div>
 
   <footer class="page-footer teal">
