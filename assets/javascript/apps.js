@@ -14,40 +14,61 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
-    $("#button").on("click", function (event) {
+
+    $(".button").on("click", function (event) {
         // In this case, the "this" keyword refers to the button that was clicked
         event.preventDefault();
 
-        var apiKeyMapquest = VhIG9vrD4t2JMvh5f9k61v8rcGERpvxV;
-        cityState = $("#input").val().trim();
+        var apiKeyMapquest = "VhIG9vrD4t2JMvh5f9k61v8rcGERpvxV";
+        cityState = $("input").val().trim();
+        console.log(cityState);
+        database.ref().push(cityState);
 
         var queryUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + apiKeyMapquest + '&location=' + cityState;
-
+        console.log(queryUrl);
         $.ajax({
             url: queryUrl,
             method: "GET"
         }).then(function (response) {
-            console.log(query);
+            var results = response.results;
+            console.log(results)
 
-            var results = response.data;
-            var lat = results.latLng.lat;
-            var lon = results.latLng.lng;
-        })
+            var lat = results[0].locations[0].displayLatLng.lat;
+            var lon = results[0].locations[0].displayLatLng.lng;
+            database.ref().push(lat);
+            database.ref().push(lon);
 
-        var queryURL = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-pass.json?lat=" + lat + "&lon=" + lon
-        console.log(queryURL);
-        // Performing our AJAX GET request
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-            // After the data comes back from the API
-            .then(function (response) {
-                console.log(response);
-                // Storing an array of results in the results variable
-                var time = response.risetime;
-                var duration = response.duration;
+            var queryURL2 = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-pass.json?lat=" + lat + "&lon=" + lon
+            console.log(queryURL2);
+            // Performing our AJAX GET request
+            $.ajax({
+                url: queryURL2,
+                method: "GET"
             })
+                // After the data comes back from the API
+                .then(function (response) {
+                    console.log(response);
+
+                    // Storing an array of results in the results variable
+                    for (var i = 0; i < response.response.length; i++) {
+                        var time = response.response[i].risetime;
+
+                        var duration = response.duration;
+
+                        var dateString = moment.unix(time).format('LLLL');
+                        console.log(time);
+                        console.log(dateString);
+                    };
+
+
+
+
+                })
+
+
+        });
     });
+
+    // $('#sighting').append('<li>' + time.toString() + '</li');
 
 });
