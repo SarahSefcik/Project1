@@ -20,7 +20,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 550px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -30,7 +30,7 @@ p {
   }
 
   img{
-    width: 90%; 
+    width: 100%; 
     height:auto;
   }
 

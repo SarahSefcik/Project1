@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website Name</title>
+  <title>Out of this World</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <!-- CSS  -->
   <!-- Added Link to Reset CSS-->
@@ -19,64 +19,90 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">allAboard</a>
+      <a id="logo-container" href="#" class="brand-logo">OUT OF THIS WORLD</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="#">Search Station</a></li>
+        <li><a href="#">About Project</a></li>
+        <li><a href="#">About ISS</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="#">Search Station</a></li>
+        <li><a href="#">About Project</a></li>
+        <li><a href="#">About ISS</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
+  <!-- PARALLAX 01 -->
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
+      <div class="container" width="300px">
+          <div id=“mapid”></div>
         <h1 class="header center teal-text text-lighten-2">International Space Station Viewer</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">Search a location to find out when you can next see the International Space
-            Station</h5>
         </div>
-        <div class="row center">
-          <div class="row">
-            <div class="input-field col s12">
-              <input type="text" id="autocomplete-input user_submit" class="autocomplete">
-              <label for="autocomplete-input">Location (ex: Orlando, FL)</label>
-            </div>
-          </div>
-          <a class="button btn-large waves-effect waves-light teal lighten-1">Submit</a>
-        </div>
-        <br><br>
-
       </div>
-    </div>
     <div class="parallax"><img src="assets/images/iss_photo-01.jpg" width="90%" height="auto" alt="ISS image, The station is over earth" /></div>
   </div>
-
+</div>
 
   <div class="container">
     <div class="section">
 
       <!--   Icon Section   -->
       <div class="row">
+
+<!-- SEARCH LOCATION START -->
+<div class="row center">
+
+    <h6 class="header col s12 light">Search a location to find out when you can next see the International
+      Space Station</h6>
+  </div>
+  <div class="row center">
+
+    <!-- FORM LOCATION START -->
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="text" id="autocomplete-input user_submit" class="autocomplete">
+      </div>
+
+      <label for="autocomplete-input">Location (ex: Orlando,FL)</label>
+    </div>
+  </div>
+  <a class="button btn-large waves-effect waves-light teal lighten-1">Submit</a>
+  <!-- FORM LOCATION END -->
+<!-- SEARCH LOCATION END -->
         <div class="col s12 m12">
           <div>
             <table class="table table-sm table-hover" id="history-table">
               <thead>
                 <tr>
+
                   <td scope="col">
                     <h5 class="center" id="city">City</h5>
                   </td>
                   <td scope="col">
                     <h5 class="center" id="sighting">Future Sightings</h5>
                   </td>
+
+                  <th scope="col">
+                    <h5 class="center">City</h5>
+
+                    <!-- CITY PULL FROM OPEN NOTIFY ISS PASS API -->
+                    <div id="city">
+
+                    </div>
+
+                  </th>
+                  <th scope="col">
+                    <h5 class="center">Future Sightings</h5>
+                    <!-- SIGHTING PULL FROM OPEN NOTIFY ISS PASS API -->
+                    <div id="sighting">
+
+                    </div>
+                  </th>
+
                 </tr>
               </thead>
               <tbody>
@@ -90,7 +116,7 @@
     </div>
   </div>
 
-
+<!-- PARALLAX 02 -->
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
@@ -122,7 +148,7 @@
     </div>
   </div>
 
-
+<!-- PARALLAX 03 -->
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
