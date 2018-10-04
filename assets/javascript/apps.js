@@ -20,7 +20,8 @@ $(document).ready(function () {
         event.preventDefault();
 
         var apiKeyMapquest = "VhIG9vrD4t2JMvh5f9k61v8rcGERpvxV";
-        cityState = $("input").val().trim();
+        userInput = $("input").val()
+        cityState = userInput.trim();
         console.log(cityState);
         database.ref().push(cityState);
 
@@ -49,21 +50,62 @@ $(document).ready(function () {
                 .then(function (response) {
                     console.log(response);
 
+                    var arr = [];
                     // Storing an array of results in the results variable
                     for (var i = 0; i < response.response.length; i++) {
-                        var time = response.response[i].risetime;
+                        
 
-                        var duration = response.duration;
+                        arr.push(response.response[i].risetime);
 
-                        var dateString = moment.unix(time).format('LLLL');
-                        console.log(time);
-                        console.log(dateString);
+                        // var duration = response.response[i].duration;
+                        // console.log(duration);
+                        
                     };
+                    console.log(arr);
+
+                    var dtFinal = [];
+
+                    for (var i = 0; i < arr.length; i++) {
+                        var time = arr[i];
+                        // console.log(time);
+
+                        var dateString = dtFinal.push(moment.unix(time).format('LLLL'));
+                        
+                        
+                    }
 
 
+                    // $("#history-table > tbody").text(dtFinal);
 
+                    $("#history-table > tbody").prepend(
+                        $("<tr>"),
+                        $("<td>").text(userInput),
+                        $("<td>").text(dtFinal),
+                    );
+                    // var newRow = $("<tr>").append(
+                    //     // $("<td>").text("input"),
+                    //     $("<td>").text(dtFinal)
+                    // );
+                    // console.log(newRow)
+                    // $("<td>").text(dtFinal.join($(<br></br>))),
+                    
+                    // $("<td>").text(dtFinal.join(<br></br>)),
+                        
+                    // $("<td>").text(dtFinal.join($("<br></br>"))),
+                    // $("#history-table > tbody").text(newRow);
+                    
+                    // console.log(dateString)
+                    console.log(dtFinal);
 
-                })
+                        
+                        
+                        
+                                           
+                    
+                    
+                    
+
+                });
 
 
         });
