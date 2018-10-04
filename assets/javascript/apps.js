@@ -24,6 +24,10 @@ $(document).ready(function () {
         console.log(cityState);
         database.ref().push(cityState);
 
+         
+
+        var queryUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + apiKeyMapquest + '&location=' + cityState
+        
 
         var queryUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + apiKeyMapquest + '&location=' + cityState;
         console.log(queryUrl);
@@ -42,6 +46,34 @@ $(document).ready(function () {
 
         });
 
+
+
+
+        var queryURL2 = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-pass.json?lat=" + lat + "&lon=" + lon
+        console.log(queryURL2);
+        // Performing our AJAX GET request
+        $.ajax({
+            url: queryURL2,
+            method: "GET"
+        })
+            // After the data comes back from the API
+            .then(function (response) {
+                console.log(response);
+
+          // Storing an array of results in the results variable
+          for (var i = 0; i < response.response.length; i++) {
+            var time = response.response[i].risetime;
+
+            var duration = response.duration;
+
+            var dateString = moment.unix(time).format('LLLL');
+            console.log(time);
+            console.log(dateString);
+            //
+
+
+          }
+            })
 
     });
 
