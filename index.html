@@ -14,6 +14,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <!-- leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <!-- leaflet scriptfiles -->
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
 </head>
 
 <body>
@@ -39,13 +46,13 @@
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container" width="300px">
-          <div id=“mapid”></div>
+        
         <h1 class="header center teal-text text-lighten-2">International Space Station Viewer</h1>
-        </div>
       </div>
+    </div>
     <div class="parallax"><img src="assets/images/iss_photo-01.jpg" width="90%" height="auto" alt="ISS image, The station is over earth" /></div>
   </div>
-</div>
+  </div>
 
   <div class="container">
     <div class="section">
@@ -53,26 +60,29 @@
       <!--   Icon Section   -->
       <div class="row">
 
-<!-- SEARCH LOCATION START -->
-<div class="row center">
+        <!-- SEARCH LOCATION START -->
+        <div class="row center">
 
-    <h6 class="header col s12 light">Search a location to find out when you can next see the International
-      Space Station</h6>
-  </div>
-  <div class="row center">
+          <h6 class="header col s12 light">Search a location to find out when you can next see the International
+            Space Station</h6>
+        </div>
+        <div class="row center">
 
-    <!-- FORM LOCATION START -->
-    <div class="row">
-      <div class="input-field col s12">
-        <input type="text" id="autocomplete-input user_submit" class="autocomplete">
-      </div>
+          <!-- FORM LOCATION START -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" id="autocomplete-input user_submit" class="autocomplete">
+            </div>
 
-      <label for="autocomplete-input">Location (ex: Orlando,FL)</label>
-    </div>
-  </div>
-  <a class="button btn-large waves-effect waves-light teal lighten-1">Submit</a>
-  <!-- FORM LOCATION END -->
-<!-- SEARCH LOCATION END -->
+            <label for="autocomplete-input">Location (ex: Orlando,FL)</label>
+          </div>
+        </div>
+        <a class="button btn-large waves-effect waves-light teal lighten-1">Submit</a>
+
+
+
+        <!-- FORM LOCATION END -->
+        <!-- SEARCH LOCATION END -->
         <div class="col s12 m12">
           <div>
             <table class="table table-sm table-hover" id="history-table">
@@ -116,7 +126,7 @@
     </div>
   </div>
 
-<!-- PARALLAX 02 -->
+  <!-- PARALLAX 02 -->
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
@@ -132,23 +142,30 @@
     <div class="section">
 
       <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id
-            nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies
-            eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et
-            pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed.
-            Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam
-            eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia Curae;</p>
+        <div class="col s6">
+          <h4>Where is the ISS now?</h4>
+       <!-- added a button for the iss location --->
+        <a id="iss" class="button btn-large waves-effect waves-light red lighten-1">ISS Locator!</a>
+<br>
+<hr>
+                <div id="latitudeN"> </div>
+                <div id="longitudeN"> </div>
+                <div id="altitude"> </div>
+                <div id="velocity"> </div>
+                <div id="visibility"> </div>
+           
+        
+        <div class="col s12 offset-s12" id="mapid"></div>
+
+          
+
         </div>
       </div>
 
     </div>
   </div>
 
-<!-- PARALLAX 03 -->
+  <!-- PARALLAX 03 -->
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
@@ -211,5 +228,6 @@
   <!-- <script src=“https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js“> </script>  -->
 
 
-</body> 
+</body>
+
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!--Link the javascript files this is for the moment time thingy-->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <h1>test</h1>
+
+  <div class="container">
+    <form>
+      <div class="form-group">
+
+        <div class="form-group">
+          <label for="latitude">Latitude</label>
+          <input type="text" class="form-control" id="latitude">
+        </div>
+        <div class="form-group form-check">
+          <input type="text" class="form-control" id="longitude">
+          <label class="form-check-label" for="exampleCheck1">Longitude</label>
+        </div>
+        <button type="submit" id="button" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <div class="results">
+
+
+
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    var time = 0;
+    var duration = 0;
+
+    // Event listener for all button elements
+    $("#button").on("click", function (event) {
+      // In this case, the "this" keyword refers to the button that was clicked
+      event.preventDefault();
+      var latitude = $("#latitude").val().trim();
+      var longitude = $("#longitude").val().trim();
+      console.log('this button is clicked');
+
+
+      // Constructing a URL to search open notify for the times when the ISS will pass by the city's latitude and longitude
+
+      var queryURL = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-pass.json?lat=" + latitude + "&lon=" + longitude
+      console.log(queryURL);
+
+
+      // Performing our AJAX GET request
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        // After the data comes back from the API
+        .then(function (response) {
+          console.log(response);
+
+          // Storing an array of results in the results variable
+          for (var i = 0; i < response.response.length; i++) {
+            var time = response.response[i].risetime;
+
+            var duration = response.duration;
+
+            var dateString = moment.unix(time).format('LLLL');
+            console.log(time);
+            console.log(dateString);
+
+            $('#sighting').append('<li>' + time.toString() + '</li>');
+
+           
+
+
+
+          }
+
+
+        })
+
+    });
+
+
+
+
+
+
+  </script>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
