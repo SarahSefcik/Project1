@@ -21,7 +21,7 @@ $(document).ready(function () {
         var apiKeyMapquest = VhIG9vrD4t2JMvh5f9k61v8rcGERpvxV;
         cityState = $("#input").val().trim();
 
-        var queryUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + apiKeyMapquest + '&location=' + cityState;
+        var queryUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + apiKeyMapquest + '&location=' + cityState
 
         $.ajax({
             url: queryUrl,
@@ -44,9 +44,20 @@ $(document).ready(function () {
             // After the data comes back from the API
             .then(function (response) {
                 console.log(response);
-                // Storing an array of results in the results variable
-                var time = response.risetime;
-                var duration = response.duration;
+
+          // Storing an array of results in the results variable
+          for (var i = 0; i < response.response.length; i++) {
+            var time = response.response[i].risetime;
+
+            var duration = response.duration;
+
+            var dateString = moment.unix(time).format('LLLL');
+            console.log(time);
+            console.log(dateString);
+            //
+
+
+          }
             })
     });
 
