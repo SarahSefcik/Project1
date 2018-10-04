@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class=jumbotron>
+      <form>
+
+        <div class="form">
+          <label for="latitude">Latitude</label>
+          <input type="text" class="form" id="latitude">
+        </div>
+
+        <div class="form">
+          <label for="longitude">Longitude</label>
+          <input type="text" class="form" id="longitude">
+        </div>
+
+        <button type="submit" id="button" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container">
+      <div id='map' style='width: 400px; height: 300px;'></div>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+
+
+
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+  <script type="text/javascript">
+
+    var time = 0;
+    var duration = 0;
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoicG1hY2s5OSIsImEiOiJjam1zNXh4c2owMGc5M3dwN2ZjeWloc2t5In0.OJ_GGAfAJgMK0OCnN2NbhA';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v10'
+    });
+
+
+    // Event listener for all button elements
+    $("#button").on("click", function (event) {
+      // In this case, the "this" keyword refers to the button that was clicked
+      event.preventDefault();
+      var latitude = $("#latitude").val().trim();
+      var longitude = $("#longitude").val().trim();
+      console.log('this button is clicked');
+
+
+      // Constructing a URL to search open notify for the times when the ISS will pass by the city's latitude and longitude
+
+      //var queryURL = "https://api.wheretheiss.at/v1/coordinates/" + latitude + "," + longitude
+
+      var queryURL = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + latitude + "," + longitude + ".json?access_token=pk.eyJ1IjoicG1hY2s5OSIsImEiOiJjam1zNXh4c2owMGc5M3dwN2ZjeWloc2t5In0.OJ_GGAfAJgMK0OCnN2NbhA"
+
+      console.log(queryURL)
+
+
+      // Performing our AJAX GET request
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        // After the data comes back from the API
+        .then(function (response) {
+          console.log(response);
+
+          // Storing an array of results in the results variable
+          var time = response.risetime;
+          var duration = response.duration;
+
+
+
+        })
+
+    });
+
+
+
+
+  </script>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
