@@ -82,19 +82,7 @@ $(document).ready(function () {
                         $("<td>").text(userInput),
                         $("<td>").text(dtFinal),
                     );
-                    // var newRow = $("<tr>").append(
-                    //     // $("<td>").text("input"),
-                    //     $("<td>").text(dtFinal)
-                    // );
-                    // console.log(newRow)
-                    // $("<td>").text(dtFinal.join($(<br></br>))),
                     
-                    // $("<td>").text(dtFinal.join(<br></br>)),
-                        
-                    // $("<td>").text(dtFinal.join($("<br></br>"))),
-                    // $("#history-table > tbody").text(newRow);
-                    
-                    // console.log(dateString)
                     console.log(dtFinal);
 
                         
