@@ -1,3 +1,9 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Titillium+Web:400,700');
+/*  HEADINGS - font-family: 'Titillium Web', sans-serif;
+    BODY - font-family: 'Montserrat', sans-serif; */
+
+
 /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
@@ -6,17 +12,37 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
+
+/* COLORS____________________________________________________________________
+
+  dark-gold - #cc9900  *  gold - #f1c54e
+  dark-blue - #0e5a72  *  blue - #9ab4be
+  dark-grey - #595958  *  grey - #8c8c8c
+  light-grey - #d3d3d3 *  polar-star - #f2f2f2
+*/
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+
 }
 
-h1 {
-  font-family: 'Righteous', cursive;
+
+h1, h2 ,h3, h4, h5, h6{
+  font-family: 'Titillium Web', sans-serif;
 }
 
-h2 {
-  font-family: 'Righteous', cursive;
+
+
+.teal-text.text-lighten-2 {
+  color: #f2f2f2 !important;
+}
+
+
+nav ul a, nav .brand-logo {
+  font-weight: 700;
+  color:#595958;
+  
 }
 
 p {
@@ -28,19 +54,17 @@ p {
 }
 
 .parallax-container {
-  min-height: 550px;
+  min-height: 600px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
 
-  img{
-    width: 100%; 
-    height:auto;
-  }
+.parallax-container .section {
+    width: 100%;
+  } 
+
+
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -74,6 +98,68 @@ footer.page-footer {
   height: 400px;
 }
 
-td {
-  align-content: center;
+img{
+  width: 100%; 
+  height:auto;
+}
+
+
+/* CARD */
+.blue-grey.darken-1 {
+  background-color:rgba(39, 39, 39, 0.7) !important;
+  border-radius: 15px;
+}
+
+
+label {
+  font-size: 0.8rem;
+  color: #f1c54e;
+}
+
+
+
+
+/* VIDEO */
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  /* position: fixed;
+  right: 0;
+  bottom: 0; */
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+/* FORM */
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  color: white;
 }
