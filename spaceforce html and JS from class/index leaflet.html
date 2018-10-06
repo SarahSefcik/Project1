@@ -132,8 +132,14 @@
                         .bindPopup('The ISS')
                         .openPopup();
 
+                        map.panTo([latitudeN, longitudeN], animate=true);
+
+                       
+
 
                 });
+
+                 setTimeout(moveIss, 3000);
         })
 
 

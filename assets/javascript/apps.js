@@ -1,7 +1,9 @@
 var mymap = null;
 
 function moveIss() {
-  if (mymap !== null) mymap.remove();
+  
+if (mymap !== null) mymap.remove();
+
 
   var queryURL = "https://api.wheretheiss.at/v1/satellites/25544";
 
@@ -32,12 +34,12 @@ function moveIss() {
       $("#velocity").text("Velocity: " + velocityN + "    MPH");
     $("#visibility").text("Visibility: " + visibility);
 
-    mymap = L.map("mapid").setView([latitudeN, longitudeN], 4);
+    mymap = L.map("mapid").setView([latitudeN, longitudeN], 2);
 
     var issIcon = L.icon({
       iconUrl: "assets/images/issColor.png",
 
-      iconSize: [10, 24], // size of the icon
+      iconSize: [15, 29], // size of the icon
       iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
       popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
@@ -47,7 +49,7 @@ function moveIss() {
       {
         attribution:
           'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 15,
+        maxZoom: 2,
         id: "mapbox.streets",
         accessToken:
           "pk.eyJ1IjoicG1hY2s5OSIsImEiOiJjam1zNXh4c2owMGc5M3dwN2ZjeWloc2t5In0.OJ_GGAfAJgMK0OCnN2NbhA"
@@ -57,14 +59,15 @@ function moveIss() {
     L.marker([latitudeN, longitudeN], { icon: issIcon }).addTo(mymap)
       //.bindPopup('The ISS')
       //.openPopup();
+      
   });
-  setTimeout(moveIss, 6000);
+  setTimeout(moveIss, 5000);
+  
 
 };
   
 
 
-if (mymap !== null) mymap.remove();
 moveIss();
 
 $(document).ready(function () {
