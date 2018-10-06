@@ -4,12 +4,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Out of this World</title>
+  <title>International Space Station Locator</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <!-- CSS  -->
   <!-- Added Link to Reset CSS-->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- Compiled and minified CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -26,7 +27,7 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">OUT OF THIS WORLD</a>
+      <a id="logo-container" href="#" class="brand-logo left-align">International Space Station Locator</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Search Station</a></li>
         <li><a href="#">About Project</a></li>
@@ -77,9 +78,7 @@
             <label for="autocomplete-input">Location (ex: Orlando,FL)</label>
           </div>
         </div>
-        <a class="button btn-large waves-effect waves-light teal lighten-1">Submit</a>
-
-
+        <a class="button btn-large waves-effect waves-light teal">Submit</a>
 
         <!-- FORM LOCATION END -->
         <!-- SEARCH LOCATION END -->
@@ -93,8 +92,8 @@
                     <h5 class="center" id="city">City</h5>
                   </td>
                   <td scope="col">
-                    <h5 class="center" id="sighting">Future Sightings</h5>
-                  </td>
+                    <h5 class="center" id="sighting">Upcoming Flybys</h5>
+                  </td> 
 
                   <th scope="col">
                     <h5 class="center">City</h5>
@@ -106,9 +105,9 @@
 
                   </th>
                   <th scope="col">
-                    <h5 class="center">Future Sightings</h5>
+                    <h5 class="center">Past Searches</h5>
                     <!-- SIGHTING PULL FROM OPEN NOTIFY ISS PASS API -->
-                    <div id="sighting">
+                    <div id="past">
 
                     </div>
                   </th>
@@ -131,7 +130,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h2 class="header col s12 light">Where is the International Space Station?</h2>
         </div>
       </div>
     </div>
@@ -139,26 +138,30 @@
   </div>
 
   <div class="container">
-    <div class="section">
+    
 
       <div class="row">
-        <div class="col s12">
-          <h4>Where is the ISS now?</h4>
-
+        <div class="col s12 ISS ">
+          
+          <h4>Track the ISS as it travels around the Earth at over 27,000 MPH!</h4>
+        
           <br>
           <hr>
           <div class="col s3">
 
             <div id="latitudeN"> </div>
             <div id="longitudeN"> </div>
+            <br>
             <div id="altitude"> </div>
+            <br>
             <div id="velocity"> </div>
+            <br>
             <div id="visibility"> </div>
           </div>
 
           <div class="col s9" id="mapid"></div>
 
-        </div>
+        
       </div>
 
     </div>
@@ -169,7 +172,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"></h5>
         </div>
       </div>
     </div>
