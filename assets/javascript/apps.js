@@ -8,8 +8,7 @@ function moveIss() {
   $.ajax({
     url: queryURL,
     method: "GET"
-  })
-  .then(function(response) {
+  }).then(function(response) {
     console.log(response);
 
     console.log(response.latitude);
@@ -60,8 +59,7 @@ function moveIss() {
     //.bindPopup('The ISS')
     //.openPopup();
   });
-  setTimeout(moveIss, 4000);
-
+  setTimeout(moveIss, 6000);
 }
 if (mymap !== null) mymap.remove();
 moveIss();
@@ -87,7 +85,6 @@ $(document).ready(function() {
   var longitude = "";
   var altitude = "";
   var velocity = "";
-  var mymap = null;
 
   $(".button").on("click", function(event) {
     // In this case, the "this" keyword refers to the button that was clicked
