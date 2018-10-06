@@ -133,19 +133,18 @@ label {
 
 /* VIDEO */
 /* Style the video: 100% width and height to cover the entire window */
+/* Style the video: 100% width and height to cover the entire window */
 #myVideo {
-
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  /* position: fixed;
+  position: fixed;
   right: 0;
-  bottom: 0; */
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
 
 /* Add some content at the bottom of the video/page */
 .content {
-  position: fixed;
+  position: relative;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
@@ -168,6 +167,39 @@ label {
   background: #ddd;
   color: black;
 }
+
+
+/* Overlay Video */
+
+.overlayContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //padding: 20px;
+  border-radius: 5px;
+  background-attachment: scroll;
+  overflow: hidden;
+}
+.overlayContainer video {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.overlayContainer .overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  background: green;
+  opacity: 0.5;
+}
+
+
+
+
 
 
 /* FORM */
