@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="valign-wrapper center-align">
-                <a class="button btn-large waves-effect amber">Submit</a>
+                <a class="button btn-large amber">Submit</a>
               </div>
               <!-- FORM LOCATION END -->
               <!-- SEARCH LOCATION END -->
@@ -72,15 +72,14 @@
                   <div>
                     <table class="table table-sm table-hover" id="history-table">
                       <thead>
-                        <tr>
-
-                          <td scope="col">
+                          <th scope="col">
                             <h5 class="center-align" id="city">City</h5>
-                          </td>
-                          <td scope="col">
-                            <h5 class="left-align" id="sighting">Future Sightings</h5>
-                          </td>
-                        </tr>
+                          </th>
+                          <tr id="city-search" class="center-align"></tr>
+                          <th scope="col">
+                            <h5 class="center-align" id="sighting">Future Sightings</h5>
+                          </th>
+                          <tr id="last-5-results" class="center-align"></tr>
                       </thead>
                       <tbody>
                         <!-- This is where the information goes from the form -->

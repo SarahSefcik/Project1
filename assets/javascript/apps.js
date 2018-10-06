@@ -1,3 +1,6 @@
+$(document).ready(function () {
+  console.log("shuttle launch");
+
 var mymap = null;
 
 function moveIss() {
@@ -66,8 +69,6 @@ function moveIss() {
 if (mymap !== null) mymap.remove();
 moveIss();
 
-$(document).ready(function () {
-  console.log("testing");
 
   // Initialize Firebase
   var config = {
@@ -150,18 +151,27 @@ $(document).ready(function () {
 
             var dateString = dtFinal.push(moment.unix(time).format("LLLL"));
           }
+$("#city-search").prepend(
+  $("<tr>").text(userInput)
+);
 
+for (let i = 0; i < dtFinal.length; i++){
+  $("#last-5-results").prepend(
+    $("<tr>").text(dtFinal[i])
+  )
+}
 
-          for (let i = 0; i < dtFinal.length; i++) {
-            $("#history-table > tbody").prepend(
-              $("<tr>"),
-              $("<td>").text(userInput),
-              $("<td>").text(dtFinal[i]),
-              $("<tr>")
-            );
-          }
+          // for (let i = 0; i < dtFinal.length; i++) {
+          //   $("#history-table > tbody").prepend(
+          //     $("<tr>"),
+          //     $("<td>").text(userInput),
+          //     $("<td>").text(dtFinal[i]),
+          //     $("<tr>")
+          //   );
+          // }
 
           console.log(dtFinal);
+          userInput = $("input").val("");
         });
     });
 
