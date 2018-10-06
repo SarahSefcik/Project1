@@ -97,6 +97,7 @@ footer.page-footer {
   border:gold solid 2px;
   border-radius: 20px;
   height: 300px;
+  margin-top: 8px;
 }
 .box{
   border: red solid 1px;
@@ -128,6 +129,7 @@ img{
   line-height: 28px;
   margin-bottom: 8px;
   color:#f1c54e;
+  
 
 }
 .card .card-title {
@@ -137,6 +139,7 @@ img{
 .blue-grey.darken-1 {
   background-color:rgba(39, 39, 39, 0.7) !important;
   border-radius: 15px;
+  border:gold solid 2px;
 }
 
 

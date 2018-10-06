@@ -34,14 +34,11 @@ if (mymap !== null) mymap.remove();
       $("#velocity").text("Velocity: " + velocityN + "    MPH");
     $("#visibility").text("Visibility: " + visibility);
 
-    mymap = L.map("mapid").setView([latitudeN, longitudeN], 2);
+    mymap = L.map("mapid").setView([latitudeN, longitudeN],2);
 
     var issIcon = L.icon({
       iconUrl: "assets/images/issColor.png",
-
-      iconSize: [15, 29], // size of the icon
-      iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
-      popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+      iconSize: [29, 39], 
     });
 
     L.tileLayer(
@@ -56,12 +53,12 @@ if (mymap !== null) mymap.remove();
       }
     ).addTo(mymap);
 
-    L.marker([latitudeN, longitudeN], { icon: issIcon }).addTo(mymap)
-      //.bindPopup('The ISS')
-      //.openPopup();
+    L.marker([latitudeN, longitudeN], {icon: issIcon}).addTo(mymap)
+    
       
   });
   setTimeout(moveIss, 5000);
+  
   
 
 };
