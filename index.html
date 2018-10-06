@@ -45,8 +45,68 @@
             Station</h5>
         </div>
         
-        
-        </div>
+
+        <!-- <h1 class="header center amber-text text-lighten-2">Out of this World</h1> -->
+        <!-- CARD START -->
+        <div class="col s12 m4 l8">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <h3 class="card-title center-align">ISS Locator</h3>
+                <!-- SEARCH LOCATION START -->
+                <div class="row center">
+  
+                  <h6 class="header col s12 light">Search a location to find out when you can next see the International
+                    Space Station</h6>
+                </div>
+                <div class="row center">
+  
+                  <!-- FORM LOCATION START -->
+                  <div class="row">
+                    <div class="input-field col s12 center-content">
+                      <input type="text" id="autocomplete-input user_submit" class="autocomplete">
+                      <label for="icon_prefix center-align">LOCATION</label>
+                    </div>
+  
+                    <label for="autocomplete-input">Location (ex: Orlando,FL)</label>
+                  </div>
+                </div>
+                <div class="valign-wrapper center-align">
+                <a class="button btn-large waves-effect amber">Submit</a>
+              </div>
+                <!-- FORM LOCATION END -->
+                <!-- SEARCH LOCATION END -->
+                <!-- SEARCH RESULTS START -->
+                <div class="row">
+  
+  
+                    <div class="col s12 m12">
+                      <div>
+                        <table class="table table-sm table-hover" id="history-table">
+                          <thead>
+                            <tr>
+            
+                              <td scope="col">
+                                <h5 class="center-align" id="city">City</h5>
+                              </td>
+                              <td scope="col">
+                                <h5 class="left-align" id="sighting">Future Sightings</h5>
+                              </td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- This is where the information goes from the form -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                <!-- SEARCH RESULTS END -->
+              </div>
+            </div>
+          </div>
+          <!-- CARD END -->
+      </div>
+
     </div>
     <div class="parallax"><img src="assets/images/iss_photo-01.jpg" width="90%" height="auto" alt="ISS image, The station is over earth" /></div>
   </div>
@@ -59,6 +119,9 @@
       <div class="row">
         <div class="col s12 m12">
           <div>
+
+            <h3 class=" center-align">Recent Location Search History</h3>
+
             <table class="table table-sm table-hover" id="history-table">
               <thead>
                 <tr>
@@ -128,7 +191,7 @@
     <div class="parallax"><img src="assets/images/iss_photo-03.jpg" alt="Unsplashed background img 3" /></div>
   </div>
 
-  <footer class="page-footer teal">
+  <footer class="page-footer grey  darken-2">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
