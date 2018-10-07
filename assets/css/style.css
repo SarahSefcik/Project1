@@ -214,6 +214,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   margin: 0 auto;
 }
 
-td {
-  text-align: center;
+#results-table {
+  height: 100px;
+  overflow: auto;
 }
