@@ -394,7 +394,7 @@ $.ajax({
             $("#apod1 img").remove();
 
 
-            i = Math.floor(Math.random() * 100 + 1);
+            i = Math.floor(Math.random() * 99 + 1);
             console.log(i);
 
             var apod = response.collection.items[i].links[0].href;
