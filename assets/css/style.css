@@ -97,11 +97,14 @@ footer.page-footer {
   border:gold solid 2px;
   border-radius: 20px;
   height: 300px;
-  margin-top: 8px;
 }
-.box{
-  border: red solid 1px;
-  z-index: 5;
+
+.stats{
+  border: red solid 2px;
+}
+
+#apod1{
+  width:300px;
 }
 
 
@@ -228,5 +231,9 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 .center-content{
 
   margin: 0 auto;
+}
 
+#results-table {
+  height: 100px;
+  overflow: auto;
 }
