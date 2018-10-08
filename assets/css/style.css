@@ -94,8 +94,31 @@ footer.page-footer {
 }
 
 #mapid{
+  border:gold solid 2px;
+  border-radius: 20px;
+  height: 300px;
+}
+
+.stats{
   border: red solid 2px;
-  height: 400px;
+}
+
+#apod1{
+  width:300px;
+}
+
+
+td {
+  align-content: center;
+}
+
+.container{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.brand-logo{
+  text-align: left;
 }
 
 img{
@@ -104,13 +127,12 @@ img{
 }
 
 
-/* CARD */
-
 .card .card-content .card-title {
   display: block;
   line-height: 28px;
   margin-bottom: 8px;
   color:#f1c54e;
+  
 
 }
 .card .card-title {
@@ -120,6 +142,7 @@ img{
 .blue-grey.darken-1 {
   background-color:rgba(39, 39, 39, 0.7) !important;
   border-radius: 15px;
+  border:gold solid 2px;
 }
 
 
@@ -200,12 +223,9 @@ label {
 
 
 
-
-
-/* FORM */
-
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   color: white;
+
   text-align: center;
 }
 
