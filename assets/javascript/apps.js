@@ -204,6 +204,7 @@ $(document).ready(function () {
       function issImages() {
 
         $("#apod1 img").remove();
+        $("#apod2 img").remove();
 
 
         i = Math.floor(Math.random() * 49 + 1);
@@ -218,13 +219,16 @@ $(document).ready(function () {
 
 
         $("#apod1").append(image1);
-        $("#apod1").append(image2);
+        $("#apod2").append(image2);
 
-        setTimeout(issImages, 10000);
 
       }
 
       issImages();
+
+      $(".btn-floating").on("click", function () {
+        issImages();
+      });
 
 
     });
