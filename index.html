@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Website Name</title>
+    <title>SPACE FORCE</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <!-- CSS  -->
     <!-- Added Link to Reset CSS-->
@@ -37,12 +37,12 @@
                 <div class="row">
                     <!-- TITLE -->
 
+                    <div class="titleBack">
+                        <h1 class="outline">International Space Station Finder</h1>
 
-                    <h1 class="outline">International Space Station Finder</h1>
 
-
-                    <h6>The current location of the ISS over the Earth</h6>
-
+                        <h6>The current location of the ISS over the Earth</h6>
+                    </div>
                     <div class="col s8">
 
                         <div class="wrapper future__cell">
@@ -81,16 +81,24 @@
                                 <div class="row center">
                                     <!-- FORM LOCATION START -->
                                     <div class="row">
-                                        <div class="input-field col s12 center-content">
-                                            <input type="text" id="autocomplete-input user_submit" class="autocomplete">
-                                            <label for="icon_prefix center-align">LOCATION</label>
-                                        </div>
-                                        <label for="autocomplete-input">Location (ex: Orlando, FL)</label>
+                                        <form class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s9">
+                                                    <i class="material-icons prefix">location_on</i>
+                                                    <input id="icon_prefix" type="text" class="validate">
+                                                    <label for="icon_prefix">ENTER LOCATION</label>
+                                                    <!-- SUBMIT BUTTON START -->
+                                                    
+                                                    <!-- SUBMIT BUTTON END -->
+                                                </div>
+                                                <div class="valign-wrapper">
+                                                    <a class="btn center-align light-blue">Submit</a>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="valign-wrapper center-align">
-                                    <a class="button btn-large center-align amber">Submit</a>
-                                </div>
+
                                 <!-- FORM LOCATION END -->
                                 <!-- SEARCH LOCATION END -->
                                 <!-- SEARCH RESULTS START -->
@@ -112,15 +120,15 @@
                                                 <tbody>
                                                     <!-- This is where the information goes from the form -->
                                                 </tbody>
-                                            <hr>
-                                            <table class="table table-sm table-hover" id="results-table">
-                                                <thead>
+                                                <hr>
+                                                <table class="table table-sm table-hover" id="results-table">
+                                                    <thead>
                                                         <h5 class="center-align" id="recent">Recent User Searches</h5>
-                                                </thead>
-                                            </table>
-                                            <tbody>
-                                                <!-- This is where the information goes from the form -->
-                                            </tbody>
+                                                    </thead>
+                                                </table>
+                                                <tbody>
+                                                    <!-- This is where the information goes from the form -->
+                                                </tbody>
 
                                         </div>
                                     </div>
@@ -138,7 +146,7 @@
                 <div class="row">
                     <div id="apod1" class="col sm 3">
                     </div>
-                    
+
                 </div>
 
 
@@ -164,5 +172,5 @@
     <script src="assets/javascript/apps.js"></script>
     <!-- <script src=“https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js“> </script>  -->
 </body>
-</html>
 
+</html>
