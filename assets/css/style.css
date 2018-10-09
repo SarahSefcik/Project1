@@ -61,6 +61,11 @@ font-size: 1.2em;
 font-weight: 100;
 }
 
+#results-table {
+  display: block;
+  overflow-y:scroll;
+  height: 200px;
+}
 
 .teal-text.text-lighten-2 {
   color: #f2f2f2 !important;
@@ -304,12 +309,6 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 
   margin: 0 auto;
 }
-
-#results-table {
-  height: 100px;
-  overflow: auto;
-}
-
 
 /* FUTURISTIC STYLE */
 
