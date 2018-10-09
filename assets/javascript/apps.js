@@ -187,7 +187,7 @@ $(document).ready(function () {
       $("<td>").text(citySearch),
       $("<td>").text(seeISS),
     )
-    $("#results-table").append(newRow);
+    $("#results-table").prepend(newRow);
   });
 
   var i = 0;
