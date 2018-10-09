@@ -221,6 +221,7 @@ img{
   line-height: 28px;
   margin-bottom: 8px;
   color:#f1c54e;
+  margin-top:2px;
   
 
 }
@@ -229,7 +230,7 @@ img{
   font-weight: 700;
 }
 .blue-grey.darken-1 {
-  background-color:rgba(13, 18, 32, 0.6) !important;
+  background-color:rgba(13, 18, 32, 0.8) !important;
   border-radius: 15px;
   border:#25A7DF solid 2px;
   border-radius: 15px 30px;
@@ -364,7 +365,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   text-align: center;
   border-radius: 5px 20px 5px;
   text-align: center;
-  background-color:rgba(13, 18, 32, 0.6) !important;
+  background-color:rgba(13, 18, 32, 0.8) !important;
 }
 
 .future_text_cell{
@@ -404,12 +405,29 @@ float:left;
   padding-left:10px;
 }
 
-.fsearch{
 
+.future_photos{
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 15px;;
+  border: 2px solid #25A7DF; 
+  width: 100%;
+  padding:30px 10px;
+  text-align: center;
+  border-radius: 5px 20px 5px;
+  text-align: center;
+  background-color:rgba(13, 18, 32, 0.8) !important;
+
+}
+.phototext{
+  padding-bottom: 10px;
+  margin-top: -10px;
 }
 
 
+.fsearch{
 
+}
 
 /* SEARCH BUTTON */
 
