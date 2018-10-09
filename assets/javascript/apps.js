@@ -207,16 +207,16 @@ $(document).ready(function () {
   var altitude = "";
   var velocity = "";
 
-
   $(".button").on("click", function (event) {
     // In this case, the "this" keyword refers to the button that was clicked
     event.preventDefault();
+    $("#city-search").empty();
+    $("#last-5-results").empty();
 
     var apiKeyMapquest = "VhIG9vrD4t2JMvh5f9k61v8rcGERpvxV";
-    userInput = $("input").val();
-    cityState = userInput.trim();
+    var userInput = $("input").val();
+    var cityState = userInput.trim();
     console.log(cityState);
-    database.ref().push(cityState);
 
     var queryUrl =
       "http://www.mapquestapi.com/geocoding/v1/address?key=" +
@@ -269,39 +269,53 @@ $(document).ready(function () {
 
             var dateString = dtFinal.push(moment.unix(time).format("LLLL"));
           }
-          database.ref().push(dtFinal);
 
-          database.ref().on("child_added", function (childSnapshot) {
-            console.log(childSnapshot.val());
+          var newSearch = {
+            search: cityState,
+            results: dtFinal,
+          }
 
-            //store all the info into a variable
-            var userInput2 = childSnapshot.val().userInput;
-            var dtFinal = childSnapshot.val().dtFinal;
-
-            var newRow = $("<tr>").append(
-              $("<td>").text(userInput2),
-              $("<td>").text(dtFinal),
-            )
-            $("#results-table").append(newRow);
-          });
+          database.ref().push(newSearch);
 
           $("#city-search").prepend(
-            $("<tr>").text(userInput)
+            $("<tr>").text(cityState)
           );
 
           for (let i = 0; i < dtFinal.length; i++) {
-            $("#last-5-results").prepend(
+            $("#last-5-results").append(
               $("<tr>").text(dtFinal[i])
             )
           }
-
           console.log(dtFinal);
           userInput = $("input").val("");
         });
 
+      // $('#sighting').append('<li>' + time.toString() + '</li');
+    })
+  });
 
-    // $('#sighting').append('<li>' + time.toString() + '</li');
+  database.ref().on("child_added", function (childSnapshot) {
+    console.log(childSnapshot.val());
+
+    //store all the info into a variable
+    var citySearch = childSnapshot.val().search;
+    var seeISS = childSnapshot.val().results;
+
+    var newRow = $("<tr>").append(
+      $("<td>").text(citySearch),
+      $("<td>").text(seeISS),
+    )
+    $("#results-table").append(newRow);
+  });
+
+  var i = 0;
+  var queryURL = "https://images-api.nasa.gov/search?q=iss&media_type=image"
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
   })
+<<<<<<< HEAD
 });
 });
 
@@ -410,3 +424,31 @@ $.ajax({
 
 
     });
+=======
+
+    .then(function (response) {
+      console.log(response);
+
+      function issImages() {
+
+        $("#apod1 img").remove();
+
+
+        i = Math.floor(Math.random() * 99 + 1);
+        console.log(i);
+
+        var apod = response.collection.items[i].links[0].href;
+        var image = $("<img>").attr("src", apod);
+
+        $("#apod1").append(image);
+
+        setTimeout(issImages, 5000);
+
+      }
+
+      issImages();
+
+
+    });
+});
+>>>>>>> c909c83ea506a51099e44dcd1c0603145ca6d899
