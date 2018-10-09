@@ -305,7 +305,7 @@ $(document).ready(function () {
       $("<td>").text(citySearch),
       $("<td>").text(seeISS),
     )
-    $("#results-table").append(newRow);
+    $("#results-table").prepend(newRow);
   });
 
   var i = 0;
@@ -432,21 +432,31 @@ $.ajax({
       function issImages() {
 
         $("#apod1 img").remove();
+        $("#apod2 img").remove();
 
 
-        i = Math.floor(Math.random() * 99 + 1);
+        i = Math.floor(Math.random() * 49 + 1);
+        j = Math.floor((Math.random() * 49 + 1) + 50);
         console.log(i);
+        console.log(j);
 
-        var apod = response.collection.items[i].links[0].href;
-        var image = $("<img>").attr("src", apod);
+        var apod1 = response.collection.items[i].links[0].href;
+        var apod2 = response.collection.items[j].links[0].href;
+        var image1 = $("<img>").attr("src", apod1);
+        var image2 = $("<img>").attr("src", apod2);
 
-        $("#apod1").append(image);
 
-        setTimeout(issImages, 5000);
+        $("#apod1").append(image1);
+        $("#apod2").append(image2);
+
 
       }
 
       issImages();
+
+      $(".btn-floating").on("click", function () {
+        issImages();
+      });
 
 
     });

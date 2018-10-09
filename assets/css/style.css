@@ -56,16 +56,37 @@ h6{
 }
 
 h5{
-  font-family: 'Roboto', sans-serif;
+font-family: 'Roboto', sans-serif;
 font-size: 1.2em;
 font-weight: 100;
+
 }
 
+#results-table {
+  display: block;
+  overflow-y:scroll;
+  height: 200px;
+}
 
 .teal-text.text-lighten-2 {
   color: #f2f2f2 !important;
+  
 }
 
+
+.titleBack{
+  padding-bottom: 10px;
+  width:80%;
+  margin-left:15px;
+  background: rgba(13, 18, 32,0.72);
+  background: -moz-linear-gradient(left, rgba(13, 18, 32,0.72) 0%, rgba(13, 18, 32,0.72) 14%, rgba(13, 18, 32,0.54) 64%, rgba(13, 18, 32,0) 100%);
+  /* background: -webkit-gradient(left top, right top, color-stop(0%, rgba(13, 18, 32,0.72)), color-stop(14%, rgba(13, 18, 32,0.72)), color-stop(64%, rgba(13, 18, 32,0.54)), color-stop(100%, rgba(13, 18, 32,0))); */
+  background: -webkit-linear-gradient(left, rgba(13, 18, 32,0.72) 0%, rgba(13, 18, 32,0.72) 14%, rgba(13, 18, 32,0.54) 64%, rgba(13, 18, 32,0) 100%);
+  background: -o-linear-gradient(left, rgba(13, 18, 32,0.72) 0%, rgba(13, 18, 32,0.72) 14%, rgba(13, 18, 32,0.54) 64%, rgba(13, 18, 32,0) 100%);
+  background: -ms-linear-gradient(left, rgba(13, 18, 32,0.72) 0%, rgba(13, 18, 32,0.72) 14%, rgba(13, 18, 32,0.54) 64%, rgba(13, 18, 32,0) 100%);
+  background: linear-gradient(to right, rgba(13, 18, 32,0.72) 0%, rgba(13, 18, 32,0.72) 14%, rgba(13, 18, 32,0.54) 64%, rgba(13, 18, 32,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283b58', endColorstr='#061e42', GradientType=1 );
+}
 
 /* outlined Text */
 .outline {
@@ -155,17 +176,12 @@ footer.page-footer {
 
 #mapid{
   border:gold solid 2px;
-<<<<<<< HEAD
-  border-radius: 20px;
-  height: 300px;
-=======
   border-radius: 5px;
-  height: 400px;
+  height: 300px;
   width: 97%;
-  opacity: 0.8;
-    filter: alpha(opacity=80); /* For IE8 and earlier */
+  opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
     margin: auto;
->>>>>>> c909c83ea506a51099e44dcd1c0603145ca6d899
 }
 
 .stats{
@@ -199,10 +215,6 @@ img{
   max-height: 700px;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c909c83ea506a51099e44dcd1c0603145ca6d899
 .card .card-content .card-title {
   display: block;
   line-height: 28px;
@@ -218,12 +230,8 @@ img{
 .blue-grey.darken-1 {
   background-color:rgba(13, 18, 32, 0.6) !important;
   border-radius: 15px;
-<<<<<<< HEAD
-  border:gold solid 2px;
-=======
   border:#25A7DF solid 2px;
   border-radius: 15px 30px;
->>>>>>> c909c83ea506a51099e44dcd1c0603145ca6d899
 }
 
 
@@ -252,7 +260,7 @@ label {
 .content {
   position: relative;
   bottom: 0;
-  background: rgba(15, 21, 37, 0.7);
+  background: rgba(15, 21, 37, 0.1);
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
@@ -305,10 +313,6 @@ label {
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c909c83ea506a51099e44dcd1c0603145ca6d899
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   color: white;
 
@@ -320,13 +324,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   margin: 0 auto;
 }
 
+
 #results-table {
   height: 100px;
   overflow: auto;
 }
-<<<<<<< HEAD
-=======
-
 
 /* FUTURISTIC STYLE */
 
@@ -340,10 +342,10 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 }
 
 .row .col.s8 {
-  margin-top: 56px;
+  margin-top: 16px;
 }
 .row .col.s4 {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .fmap{
@@ -366,6 +368,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   text-align: center;
   border-radius: 5px 20px 5px;
   text-align: center;
+  background-color:rgba(13, 18, 32, 0.6) !important;
 }
 
 .future_text_cell{
@@ -374,6 +377,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   margin: 0;
   border: 1px solid #25A7DF;
   padding:10px;
+  width:97%;
 }
 
 #latitudeN, #longitudeN {
@@ -414,9 +418,12 @@ float:left;
 /* SEARCH BUTTON */
 
 .valign-wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  float:left;
+  vertical-align: sub;
+  margin-top:22px;
+  /* display: flex;
+  align-items: right;
+  justify-content: right; */
 }
 
->>>>>>> c909c83ea506a51099e44dcd1c0603145ca6d899
+
