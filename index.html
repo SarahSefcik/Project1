@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- STYLE CSS -->
     <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <!-- leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin="" />
@@ -32,41 +35,41 @@
         <div class="row overlayContainer">
 
             <!-- FUTURISTIC BACKGROUND START-->
-            <div class="futureBackground">
+            <div class="futureBackground animated fadeInDown slow">
 
                 <div class="row">
                     <!-- TITLE -->
 
-                    <div class="titleBack">
-                        <h1 class="outline">International Space Station Finder</h1>
+                    <div class="titleBack animated fadeInLeft delay-2s">
+                        <h1 class="outline animated zoomInDown delay-4s slower">International Space Station Finder</h1>
 
 
 
                     </div>
                     <div class="col s12 m12 l8">
 
-                        <div class="wrapper future__cell">
-                            <h6>The current location of the ISS over the Earth</h6>
+                        <div class="wrapper future__cell animated fadeInLeft delay-2s">
+                            <h6 class="animated flipInX delay-3s">The current location of the ISS over the Earth</h6>
                             <!-- MAP START -->
                             <div id="mapBox">
-                                <div id="mapid">
+                                <div class="animated fadeInLeft delay-2s" id="mapid">
                                 </div>
                             </div>
                             <!-- MAP END -->
                             <!-- LOCATION INFO START -->
                             <div class="future_text_cell">
-                                <div id="latitudeN" class="flist"> </div>
-                                <div id="longitudeN" class="flist"> </div>
-                                <div id="altitude" class="flist"> </div>
-                                <div id="velocity" class="flist"> </div>
-                                <div id="visibility" class="flist"> </div>
+                                <div id="latitudeN" class="flist animated fadeInDown delay-4s"> </div>
+                                <div id="longitudeN" class="flist animated fadeInDown delay-4s"> </div>
+                                <div id="altitude" class="flist animated fadeInDown delay-4s"> </div>
+                                <div id="velocity" class="flist animated fadeInDown delay-4s"> </div>
+                                <div id="visibility" class="flist animated fadeInDown delay-4s"> </div>
                             </div>
                             <!-- LOCATION INFO END -->
                         </div>
                         <!-- PHOTO START -->
-                        <div class="row">
+                        <div class="row animated fadeInLeft delay-3s">
                             <div class="col s12 m12 l12 future_photos">
-                                <h4 class="phototext">NASA SPACE PHOTOS</h4>
+                                <h4 class="phototext animated flipInX delay-4s">NASA SPACE PHOTOS</h4>
                                 <div id="apod1" class="col s1">
                                 </div>
                                 <div id="apod2" class="col s1">
@@ -77,8 +80,7 @@
                                 </div> -->
                                 <div class="col s1 center-align">
                                     <a class="btn-floating btn light-blue"><i class="material-icons large tooltipped"
-                                            data-position="bottom" data-tooltip="Next Photos"> photo_camera</i><i
-                                            class="material-icons">camera_alt</i></a>
+                                            data-position="bottom" data-tooltip="Next Photos"> photo_camera</i><i class="material-icons">camera_alt</i></a>
                                 </div>
                             </div>
 
@@ -87,12 +89,12 @@
 
                     </div>
                     <!-- SEARCH ISS START-->
-                    <div class="col s12 m12 l4">
+                    <div class="col s12 m12 l4 animated fadeInRight delay-2s">
                         <!-- CARD START -->
 
                         <div class="card blue-grey darken-1">
                             <div class="card-content white-text">
-                                <h3 class="card-title center-align">ISS Locator</h3>
+                                <h3 class="card-title center-align animated flipInX delay-4s">ISS Locator</h3>
                                 <!-- SEARCH LOCATION START -->
                                 <div class="row center">
                                     <h5 class="header col s12 light">Search a location to find out when you can next
@@ -128,12 +130,12 @@
                                                 <table class="table table-sm table-hover" id="history-table">
                                                     <thead>
                                                         <th scope="col">
-                                                            <h5 class="left-align amber-text" id="city"><strong>City</strong></h5>
+                                                            <h5 class="left-align amber-text animated flipInX delay-4s" id="city"><strong>City</strong></h5>
                                                         </th>
                                                         <tr id="city-search" class="center-align">
                                                         </tr>
                                                         <th scope="col">
-                                                            <h5 class="left-align amber-text" id="sighting"><strong>
+                                                            <h5 class="left-align amber-text animated flipInX delay-4s" id="sighting"><strong>
                                                                     Sightings</strong></h5>
                                                         </th>
                                                         <tr id="last-5-results" class="center-align"></tr>
