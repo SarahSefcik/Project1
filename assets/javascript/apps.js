@@ -26,7 +26,7 @@ $(document).ready(function () {
     console.log(cityState);
 
     var queryUrl =
-      "http://www.mapquestapi.com/geocoding/v1/address?key=" +
+      "https://www.mapquestapi.com/geocoding/v1/address?key=" +
       apiKeyMapquest +
       "&location=" +
       cityState;
