@@ -43,21 +43,27 @@ h1 {
   color:#25A7DF;
   letter-spacing: 3px;
 }
+h3{
+  text-transform: uppercase;
+}
+
+h5{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6em;
+  font-weight: 100;
+  
+  }
 
 h6{
 
   line-height: 100%;
-  margin-top: 10px;
   padding-left: 20px;
-  letter-spacing: 9px;
-  font-size:1.4em;
-
-}
-
-h5{
-font-family: 'Roboto', sans-serif;
-font-size: 1.2em;
-font-weight: 100;
+  /* letter-spacing: 9px; */
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  font-size: 1.7em;
+  color: #f1c54e;
+  text-transform: uppercase;
 
 }
 
@@ -77,6 +83,7 @@ font-weight: 100;
   padding-bottom: 10px;
   width:80%;
   margin-left:15px;
+  border-radius: 5px;
   background: rgba(13, 18, 32,0.72);
   background: -moz-linear-gradient(left, rgba(13, 18, 32,0.72) 0%, rgba(13, 18, 32,0.72) 14%, rgba(13, 18, 32,0.54) 64%, rgba(13, 18, 32,0) 100%);
   /* background: -webkit-gradient(left top, right top, color-stop(0%, rgba(13, 18, 32,0.72)), color-stop(14%, rgba(13, 18, 32,0.72)), color-stop(64%, rgba(13, 18, 32,0.54)), color-stop(100%, rgba(13, 18, 32,0))); */
@@ -169,7 +176,7 @@ footer.page-footer {
 }
 
 #mapBox{
-  padding-top: 20px;
+  padding-top:0px;
 }
 
 #mapid{
@@ -210,14 +217,15 @@ img{
 }
 
 .card{
-  max-height: 700px;
+  max-height: 720px;
+  overflow: hidden;
 }
 
 
 .card .card-content .card-title {
   display: block;
-  line-height: 28px;
-  margin-bottom: 8px;
+  line-height: 12px;
+  margin-bottom: 10px;
   color:#f1c54e;
   margin-top:2px;
   
@@ -226,6 +234,7 @@ img{
 .card .card-title {
   font-size: 2em;
   font-weight: 700;
+  margin-top:15px;
 }
 .blue-grey.darken-1 {
   background-color:rgba(13, 18, 32, 0.8) !important;
@@ -260,7 +269,7 @@ label {
 .content {
   position: relative;
   bottom: 0;
-  background: rgba(15, 21, 37, 0.1);
+  background: rgba(15, 21, 37, 0);
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
@@ -359,7 +368,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   margin: 0;
   border: 2px solid #25A7DF; 
   width: 100%;
-  padding:30px 10px;
+  padding:10px;
   text-align: center;
   border-radius: 5px 20px 5px;
   text-align: center;
@@ -369,10 +378,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 .future_text_cell{
   display: inline-block;
   box-sizing: border-box;
-  margin: 0;
+  margin-top: 20px;
   border: 1px solid #25A7DF;
   padding:10px;
   width:97%;
+  border-radius: 5px;
 }
 
 #latitudeN, #longitudeN {
@@ -402,14 +412,14 @@ float:left;
   float:left;
   padding-left:10px;
 }
-
+/* PHOTOS START */
 
 .future_photos{
   display: inline-block;
   box-sizing: border-box;
   margin-top: 15px;;
   border: 2px solid #25A7DF; 
-  width: 100%;
+  width: 50%;
   padding:30px 10px;
   text-align: center;
   border-radius: 5px 20px 5px;
@@ -422,6 +432,22 @@ float:left;
   margin-top: -10px;
 }
 
+
+#apod1, #apod2 {
+/* height:40px; 
+border-radius: 10px;
+display: block;
+margin-left: auto;
+margin-right: auto; */
+width: 150px;
+height: 150px;
+float: left;
+overflow: hidden;
+display: inline-block
+}
+
+
+/* PHOTO END */
 
 .fsearch{
 
@@ -437,3 +463,7 @@ float:left;
   align-items: right;
   justify-content: right; */
 }
+
+
+/* IMAGE MODAL */
+
