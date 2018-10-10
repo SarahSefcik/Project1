@@ -14,81 +14,6 @@ $(document).ready(function () {
 
   var database = firebase.database();
 
-  var mymap = null;
-
-  function moveIss() {
-    if (mymap !== null) mymap.remove();
-
-    var queryURL = "https://api.wheretheiss.at/v1/satellites/25544";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      .then(function (response) {
-        console.log(response);
-
-        console.log(response.latitude);
-        console.log(response.longitude);
-
-        var altitude = response.altitude;
-        var velocity = response.velocity;
-        var visibility = response.visibility;
-        var latitude = response.latitude;
-        var longitude = response.longitude;
-
-        var altitudeN = altitude.toFixed(2);
-        var velocityN = velocity.toFixed(2);
-        var latitudeN = latitude.toFixed(4);
-        var longitudeN = longitude.toFixed(4);
-
-        $("#latitudeN").text("Latitude: " + latitudeN),
-          $("#longitudeN").text("Longitude: " + longitudeN),
-          $("#altitude").text(
-            "Altitude: " + altitudeN + "    Miles above the Earth"
-          ),
-          $("#velocity").text("Velocity: " + velocityN + "    MPH");
-        $("#visibility").text("Visibility: " + visibility);
-
-        mymap = L.map("mapid").setView([latitudeN, longitudeN], 4);
-
-        var issIcon = L.icon({
-          iconUrl: "assets/images/issColor.png",
-
-          iconSize: [10, 24], // size of the icon
-          iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-        });
-
-        L.tileLayer(
-          "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-          {
-            attribution:
-              'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 15,
-            id: "mapbox.streets",
-            accessToken:
-              "pk.eyJ1IjoicG1hY2s5OSIsImEiOiJjam1zNXh4c2owMGc5M3dwN2ZjeWloc2t5In0.OJ_GGAfAJgMK0OCnN2NbhA"
-          }
-        ).addTo(mymap);
-
-        L.marker([latitudeN, longitudeN], { icon: issIcon }).addTo(mymap);
-        //.bindPopup('The ISS')
-        //.openPopup();
-      });
-    setTimeout(moveIss, 4000);
-
-  }
-  if (mymap !== null) mymap.remove();
-  moveIss();
-
-  //variables for the ISS location button clicks
-  var latitude = "";
-  var longitude = "";
-  var altitude = "";
-  var velocity = "";
-  var mymap = null;
-
   $(".button").on("click", function (event) {
     // In this case, the "this" keyword refers to the button that was clicked
     event.preventDefault();
@@ -183,12 +108,94 @@ $(document).ready(function () {
     var citySearch = childSnapshot.val().search;
     var seeISS = childSnapshot.val().results;
 
+    function resultsList(){
+    for (let i = 0; i < seeISS.length; i++) {
+      $("#results-table").prepend(
+        $("<tr>").text(seeISS[i]))
+      }
+    }
+
     var newRow = $("<tr>").append(
       $("<td>").text(citySearch),
-      $("<td>").text(seeISS),
+      $("<td>").text(resultsList()),
     )
     $("#results-table").prepend(newRow);
   });
+
+  var mymap = null;
+
+  function moveIss() {
+    if (mymap !== null) mymap.remove();
+
+    var queryURL = "https://api.wheretheiss.at/v1/satellites/25544";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      .then(function (response) {
+        console.log(response);
+
+        console.log(response.latitude);
+        console.log(response.longitude);
+
+        var altitude = response.altitude;
+        var velocity = response.velocity;
+        var visibility = response.visibility;
+        var latitude = response.latitude;
+        var longitude = response.longitude;
+
+        var altitudeN = altitude.toFixed(2);
+        var velocityN = velocity.toFixed(2);
+        var latitudeN = latitude.toFixed(4);
+        var longitudeN = longitude.toFixed(4);
+
+        $("#latitudeN").text("Latitude: " + latitudeN),
+          $("#longitudeN").text("Longitude: " + longitudeN),
+          $("#altitude").text(
+            "Altitude: " + altitudeN + "    Kilometers above the Earth"
+          ),
+          $("#velocity").text("Velocity: " + velocityN + "    KPH");
+        $("#visibility").text("Visibility: " + visibility);
+
+        mymap = L.map("mapid").setView([latitudeN, longitudeN], 4);
+
+        var issIcon = L.icon({
+          iconUrl: "assets/images/issColor.png",
+
+          iconSize: [10, 24], // size of the icon
+          iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        L.tileLayer(
+          "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
+          {
+            attribution:
+              'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 15,
+            id: "mapbox.streets",
+            accessToken:
+              "pk.eyJ1IjoicG1hY2s5OSIsImEiOiJjam1zNXh4c2owMGc5M3dwN2ZjeWloc2t5In0.OJ_GGAfAJgMK0OCnN2NbhA"
+          }
+        ).addTo(mymap);
+
+        L.marker([latitudeN, longitudeN], { icon: issIcon }).addTo(mymap);
+        //.bindPopup('The ISS')
+        //.openPopup();
+      });
+    setTimeout(moveIss, 4000);
+
+  }
+  if (mymap !== null) mymap.remove();
+  moveIss();
+
+  //variables for the ISS location button clicks
+  var latitude = "";
+  var longitude = "";
+  var altitude = "";
+  var velocity = "";
+  var mymap = null;
 
   var i = 0;
   var queryURL = "https://images-api.nasa.gov/search?q=iss&media_type=image"
