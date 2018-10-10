@@ -386,7 +386,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   width: 100%;
   padding:10px;
   text-align: center;
-  border-radius: 5px 20px 5px;
+  border-radius: 20px 20px 5px 5px;
   text-align: center;
   background-color:rgba(13, 18, 32, 0.8) !important;
 }
@@ -438,13 +438,13 @@ float:left;
   border: 2px solid #25A7DF; 
   padding:5px 10px 30px 10px;
   text-align: center;
-  border-radius: 5px 20px 5px;
+  border-radius: 5px 5px 20px 20px;
   background-color:rgba(13, 18, 32, 0.8) !important;
   margin-right:35px;
-  margin-left:5px;
+  margin-left:0px;
   overflow: hidden;
   height: 240px;
-  width:99.5%;
+  width:100%;
   
 }
 
