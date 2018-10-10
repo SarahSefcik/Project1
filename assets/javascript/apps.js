@@ -226,10 +226,33 @@ $(document).ready(function () {
 
       issImages();
 
-      $(".btn-floating").on("click", function () {
-        issImages();
+      var groundPhoto = ["assets/images/ISS_Photos/pic0.jpg", "assets/images/ISS_Photos/pic1.jpg", "assets/images/ISS_Photos/pic2.jpg", "assets/images/ISS_Photos/pic3.jpg", "assets/images/ISS_Photos/pic4.jpg"];
+
+      function groundImages() {
+        $("#apod0 img").remove();
+
+        var k = Math.floor(Math.random() * groundPhoto.length);
+
+        console.log(k);
+
+        var apod0 = groundPhoto[k];
+
+        var image0 = $("<img>").attr("src", apod0);
+
+
+         $("#apod0").append(image0);
+
+
+};
+
+        groundImages();
+        
+
+        $(".btn-floating").on("click", function () {
+          groundImages();
+          issImages();
+        });
+
+
       });
-
-
     });
-});
