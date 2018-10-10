@@ -236,8 +236,9 @@ $(document).ready(function () {
         console.log(k);
 
         var apod0 = groundPhoto[k];
-
-        var image0 = $("<img>").attr("src", apod0);
+        var image0 = $("<img>");
+        image0.attr("src", apod0);
+        image0.attr("height", "1000");
 
 
          $("#apod0").append(image0);
