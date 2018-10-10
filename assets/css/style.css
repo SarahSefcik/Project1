@@ -16,7 +16,6 @@
 
 
 /* COLORS____________________________________________________________________
-
   dark-gold - #cc9900  *  gold - #f1c54e
   dark-blue - #0e5a72  *  futuristic-blue - #25A7DF
   dark-grey - #595958  *  grey - #8c8c8c
@@ -136,7 +135,6 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-
 .parallax-container .section {
     width: 100%;
   }  */
@@ -214,6 +212,7 @@ img{
 .card{
   max-height: 700px;
 }
+
 
 .card .card-content .card-title {
   display: block;
@@ -314,6 +313,7 @@ label {
 
 
 
+
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   color: white;
 
@@ -323,12 +323,6 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 .center-content{
 
   margin: 0 auto;
-}
-
-
-#results-table {
-  height: 100px;
-  overflow: auto;
 }
 
 /* FUTURISTIC STYLE */
@@ -443,5 +437,3 @@ float:left;
   align-items: right;
   justify-content: right; */
 }
-
-
