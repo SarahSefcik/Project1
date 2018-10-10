@@ -462,6 +462,14 @@ width:44%;
   width: 50%;
 }
 
+#apod0 {
+  width:30%;
+  height:160px;
+  float: left;
+  overflow: hidden;
+  display: inline-block
+  }
+
 #apod1{
 /* height:40px; 
 border-radius: 10px;
